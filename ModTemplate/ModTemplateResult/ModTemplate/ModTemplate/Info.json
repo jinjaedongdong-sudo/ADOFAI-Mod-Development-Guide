@@ -1,0 +1,8 @@
+{
+  "Id": "TestMOD2",
+  "DisplayName": "TestMOD2",
+  "Author": "Flower",
+  "Version": "1.0.0",
+  "AssemblyName": "ModTemplate.dll",
+  "EntryMethod": "ModTemplate.Main.Setup"
+}
