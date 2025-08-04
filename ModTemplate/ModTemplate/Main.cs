@@ -34,20 +34,26 @@ namespace ModTemplate
                 //모드 킬때
                 harmony = new Harmony(modEntry.Info.Id);
                 harmony.PatchAll(Assembly.GetExecutingAssembly());
-                
+
                 modEntry.OnGUI = OnGUI;
                 modEntry.OnSaveGUI = OnSaveGUI;
-                
+
                 //UI 생성
                 testGUI = new GameObject().AddComponent<TestGUI>();
                 UnityEngine.Object.DontDestroyOnLoad(testGUI);
+
+                // register timeline controller for editor scene
+                CameraTimeline.Enable();
             }
             else
             {
                 //UI 파괴
                 if(testGUI!=null) UnityEngine.Object.DestroyImmediate(testGUI);
                 testGUI = null;
-                
+
+                // remove timeline controller
+                CameraTimeline.Disable();
+
                 //모드 끌때
                 harmony.UnpatchAll(modEntry.Info.Id);
             }
