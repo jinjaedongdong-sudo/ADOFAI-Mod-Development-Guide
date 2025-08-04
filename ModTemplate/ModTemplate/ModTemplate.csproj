@@ -58,6 +58,7 @@
     <ItemGroup>
         <Compile Include="Main.cs" />
         <Compile Include="Patch.cs" />
+        <Compile Include="CameraTimeline.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Setting.cs" />
         <Compile Include="TestGUI.cs" />
